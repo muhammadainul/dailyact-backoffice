@@ -1,0 +1,145 @@
+extends /layout
+
+block local-style
+    style(type="text/css").
+        #weatherWidget .currentDesc {
+            color: #ffffff!important;
+        }
+
+        .traffic-chart {
+            min-height: 335px;
+        }
+
+        #flotPie1  {
+            height: 150px;
+        }
+
+        #flotPie1 td {
+            padding:3px;
+        }
+
+        #flotPie1 table {
+            top: 20px!important;
+            right: -10px!important;
+        }
+
+        .chart-container {
+            display: table;
+            min-width: 270px;
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        #flotLine5  {
+            height: 105px;
+        }
+
+        #flotBarChart {
+            height: 150px;
+        }
+
+        #cellPaiChart{
+            height: 160px;
+        }
+    //- </style>
+
+//- block main-menu
+//-     <nav class="navbar navbar-expand-sm navbar-default">
+//-         <div id="main-menu" class="main-menu collapse navbar-collapse">
+//-             <ul class="nav navbar-nav">
+//-                 include /menus/dashboard
+//-                 include /menus/groups/ui-elements
+//-                 include /menus/groups/icons
+//-                 include /menus/groups/extras
+//-                 include /menus/groups/administration
+//-             </ul>
+//-         </div><!-- /.navbar-collapse -->
+//-     </nav>
+
+block content
+    <div class="content">
+        <!-- Animated -->
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            include /cards/dastatistic
+            include /cards/indicator
+            include /cards/cellpiechart
+            //- <!-- /Widgets -->
+            //- <!--  Traffic  -->
+            //- <div class="row">
+            //-     <div class="col-lg-12">
+            //-         include /cards/traffic
+            //-     </div><!-- /# column -->
+            //- </div>
+            //- <!--  /Traffic -->
+            //- <div class="clearfix"></div>
+            //- <!-- Orders -->
+            //- <div class="orders">
+            //-     <div class="row">
+            //-         <div class="col-xl-8">
+            //-             include /cards/orders/orders
+            //-         </div>  <!-- /.col-lg-8 -->
+
+            //-         <div class="col-xl-4">
+            //-             <div class="row">
+            //-                 <div class="col-lg-6 col-xl-12">
+            //-                     include /cards/orders//flotpie1
+            //-                 </div>
+
+            //-                 <div class="col-lg-6 col-xl-12">
+            //-                     include /cards/orders//flotline5
+            //-                 </div>
+            //-             </div>
+            //-         </div> <!-- /.col-md-4 -->
+            //-     </div>
+            //- </div>
+            //- <!-- /.orders -->
+            //- <!-- To Do and Live Chat -->
+            //- <div class="row">
+            //-     <div class="col-lg-6">
+            //-         include /cards/todo-list
+            //-     </div>
+
+            //-     <div class="col-lg-6">
+            //-         include /cards/live-chat
+            //-     </div>
+            //- </div>
+            //- <!-- /To Do and Live Chat -->
+            //- <!-- Calender Chart Weather  -->
+            //- <div class="row">
+            //-     <div class="col-md-12 col-lg-4">
+            //-         include /cards/calendar
+            //-     </div>
+
+            //-     <div class="col-lg-4 col-md-6">
+            //-         include /cards/cellpiechart
+            //-     </div>
+            //-     <div class="col-lg-4 col-md-6">
+            //-         include /cards/weather
+            //-     </div>
+            //- </div>
+            //- <!-- /Calender Chart Weather -->
+            //- include /modals/calendar/new-event
+            //- include /modals/calendar/add-category
+            //- include /modals/admin/register
+        <!-- /#add-category -->
+        </div>
+        <!-- .animated -->
+    <div>
+
+block append card-script
+    <!--  Chart js -->
+    <script src="/assets/js/lib/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
+
+    <!--Chartist Chart-->
+    <script src="/assets/js/lib/chartist@0.11.0/dist/chartist.min.js"></script>
+    <script src="/assets/js/lib/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
+
+    <script src="/assets/js/lib/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+    <script src="/assets/js/lib/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
+    <script src="/assets/js/lib/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+
+block local-script
+    <!--Local Stuff-->
+    <script src="/assets/js/pages/index.js"></script>

@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Category List </h4>
+    </div>
+    <div class="card-body">
+        <button class='openAddCategoryDialog btn btn-outline-primary' type='button' data-toggle='modal'><i class='fa fa-plus'></i> Add Category</button><br><br>
+        <div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table id="mastertable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Category Name</th>
+                        <th>URL</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+include /modals/master/category_add
+include /modals/master/category_edit
+include /modals/master/category_delete
+
+block append card-script
+    <script src="/assets/js/datatables/master/category.js"></script>
+

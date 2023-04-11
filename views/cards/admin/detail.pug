@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">User Detail</strong>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">_id: #{user.userDetail._id}</li>
+            <li class="list-group-item">username: #{user.userDetail.username}</li>
+            <li class="list-group-item">firstname: #{user.userDetail.firstname}</li>
+            <li class="list-group-item">lastname: #{user.userDetail.lastname}</li>
+            <li class="list-group-item">sex: #{user.userDetail.sex}</li>
+            <li class="list-group-item">hobbies: #{user.userDetail.hobbies}</li>
+            <li class="list-group-item">birthday: #{user.userDetail.birthday}</li>
+            <li class="list-group-item">pp: #{user.userDetail.pp}</li>
+            <li class="list-group-item">isPrivate: #{user.userDetail.isPrivate}</li>
+            <li class="list-group-item">userId: #{user.userDetail.userId}</li>
+            <li class="list-group-item">createdAt: #{user.userDetail.createdAt}</li>
+            <li class="list-group-item">updatedAt: #{user.userDetail.updatedAt}</li>
+        </ul>
+        if (editable)
+            <div class="text-right">
+                <a href="/admin/userdetail/#{user._id}/edit" class="btn btn-link">Edit</a>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="modal fade" id="actionPost" tabindex="-1" role="dialog" aria-labelledby="actionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <center><h4 class="modal-title">New Post</h3></center>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body actionBodyPost" style="text-align:center;">
+                <form id="postForm" action="#" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <div class="form-group">
+                                <label for="files" class=" form-control-label"> Images/Videos</label>
+                                <input type="file" id="files" name="files" accept="video/*,image/*" multiple required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class=" form-control-label"> Location</label>
+                                <input type="text" placeholder="Jakarta" class="form-control" id="name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="caption" class=" form-control-label"> Caption</label>
+                                <textarea placeholder="Captions here.." class="form-control" id="caption" name="caption" rows="3" cols="30"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <div class="form-group">
+                                <label for="indicator1" class=" form-control-label">Indicator 1</label>
+                                <select name="indicator[0]" id="indicator1" class="form-control">
+                                    <option value="NONE">Please select one</option>
+                                    if(lists)
+                                        each val in lists.indicator
+                                            <option value=#{val}>#{val}</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="indicatorDiv2">
+                                <div class="row">
+                                    <div class="form-group col-9">
+                                        <label for="indicator2" class=" form-control-label">Indicator 2</label>
+                                        <select name="indicator[1]" id="indicator2" class="form-control">
+                                            <option value="NONE">Please select one</option>
+                                            if(lists)
+                                                each val in lists.indicator
+                                                    <option value=#{val}>#{val}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-3">
+                                        <br>
+                                        <button type="button" id="indicatorRemove" class="btn btn-sm btn-danger"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mood" class=" form-control-label">Mood</label>
+                                <select name="mood" id="mood" class="form-control">
+                                    <option value="NONE">Please select one</option>
+                                    if(lists)
+                                        each val in lists.mood
+                                            <option value=#{val}>#{val}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id="buttonPost" class="btn btn-lg btn-info"><i class="fa fa-cloud-upload"></i>&nbsp; Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+block append modal-script
+    <script src="/assets/js/modals/bizdev/post.js"></script>

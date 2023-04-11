@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">User</strong>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">_id: #{user._id}</li>
+            <li class="list-group-item">username: #{user.username}</li>
+            <li class="list-group-item">verifyOTP: #{user.verifyOTP}</li>
+
+            <li class="list-group-item">accountNonExpired: #{user.accountNonExpired}</li>
+            <li class="list-group-item">accountNonLocked: #{user.accountNonLocked}</li>
+            <li class="list-group-item">admin: #{user.admin}</li>
+            <li class="list-group-item">local email: #{user.local.email}</li>
+            <li class="list-group-item">mobile: (+#{user.country_code}) #{user.mobile}</li>
+            <li class="list-group-item">enabled: #{user.enabled}</li>
+            <li class="list-group-item">createdAt: #{user.createdAt}</li>
+            <li class="list-group-item">updatedAt: #{user.updatedAt}</li>
+        </ul>
+        if (editable)
+            <div class="text-right">
+                <a href="/admin/user/#{user._id}/edit" class="btn btn-link">Edit</a>
+            </div>
+    </div>
+</div>

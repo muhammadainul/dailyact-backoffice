@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Favorite List </h4>
+    </div>
+    <div class="card-body">
+        <div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table id="favoritetable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Favorite Title</th>
+                        <th>Count</th>
+                        <th>isVerified</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+include /modals/tenfavs/edit
+
+block append card-script
+    <script src="/assets/js/datatables/tenfavs/list.js"></script>
+

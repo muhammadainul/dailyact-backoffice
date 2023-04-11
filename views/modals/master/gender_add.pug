@@ -1,0 +1,27 @@
+<div class="modal fade" id="actionAddGender" tabindex="-1" role="dialog" aria-labelledby="actionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="modal-title">Add New Gender</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body actionBodyAddGender" style="text-align:center;">
+                <form action="/master/gender/add" method="post" >
+                    <div class="form-group">
+                        <label for="gender" class=" form-control-label">Gender Name</label>
+                        <input type="text" placeholder="ex: MALE" class="form-control" id="gender" name="gender">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-lg btn-info"><i class="fa fa-save"></i>&nbsp; Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+block append modal-script
+    <script src="/assets/js/modals/master/gender_add.js"></script>

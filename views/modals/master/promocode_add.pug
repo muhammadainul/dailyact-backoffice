@@ -1,0 +1,35 @@
+<div class="modal fade" id="actionAddPromoCode" tabindex="-1" role="dialog" aria-labelledby="actionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="modal-title">Add New PromoCode</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body actionBodyAddPromoCode" style="text-align:center;">
+                <form action="/master/promocode/add" method="post" >
+                    <div class="form-group">
+                        <label for="promocode" class=" form-control-label">PromoCode Name</label>
+                        <input type="text" placeholder="ex: DAILYACT-EVENT" class="form-control" id="code" name="code">
+                    </div>
+                    <div class="form-group">
+                        <label for="start" class=" form-control-label">Start Date</label>
+                        <input type="datetime-local" class="form-control" id="start" name="start">
+                    </div>
+                    <div class="form-group">
+                        <label for="end" class=" form-control-label">End Date</label>
+                        <input type="datetime-local" class="form-control" id="end" name="end">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-lg btn-info"><i class="fa fa-save"></i>&nbsp; Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+block append modal-script
+    <script src="/assets/js/modals/master/promocode_add.js"></script>

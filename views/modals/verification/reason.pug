@@ -1,0 +1,33 @@
+<div class="modal fade" id="reasonRejectConfirmation">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5 class="modal-title">Reason</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body actionBodyAddCategory" style="text-align:center;">
+                <form id="reasonForm" name="reasonForm" action="/verification/review/update" method="post">
+                    <input type="hidden" id="verificationId" name="verificationId" value="#{verification._id}">
+                    <input type="hidden" id="approved" name="approved">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <textarea class="form-control" name="reason" id="reason" rows="5" required></textarea>
+                            <span class="error" id="reasonError">Please fill out this field.</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id="rejectConfirmButton" class="openActionConfirmation btn btn-sm btn-danger" data-toggle="modal" disabled><i class="fa fa-ban"></i>&nbsp; Reject</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+include rejected-modal
+
+block append modal-script   
+    <script src="/assets/js/modals/verification/reason.js"></script>

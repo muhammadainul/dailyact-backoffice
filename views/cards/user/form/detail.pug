@@ -1,0 +1,89 @@
+mixin isChecked(id, value)
+    if value == true
+        <input type="radio" id="#{id}" name="#{id}" value="true" class="form-check-input" checked>True&nbsp;
+        <input type="radio" id="#{id}" name="#{id}" value="false" class="form-check-input">False
+    else
+        <input type="radio" id="#{id}" name="#{id}" value="true" class="form-check-input">True&nbsp;
+        <input type="radio" id="#{id}" name="#{id}" value="false" class="form-check-input" checked>False
+
+mixin select(id, selected)
+    <select name="#{id}" id="#{id}" class="form-control">
+        <option value="0">Please select one</option>
+        each val in lists.gender
+            if val == selected
+                <option value=#{val} selected>#{val}</option>
+            else
+                <option value=#{val}>#{val}</option>
+    </select>
+
+<div class="card">
+    <div class="card-header"><strong>Details</strong><small> Edit</small></div>
+    <div class="card-body card-block text-left">
+        <form action="/user/detail/update" method="post" >
+        <input type="hidden" value="#{user._id}" name="userId">
+            <input type="hidden" value="#{user.userDetail._id}" name="userDetailId">
+            <div class="form-group">
+                <label for="detailid" class=" form-control-label">Detail ID</label>
+                <input type="text" placeholder="detailId" class="form-control" disabled id="detailId" value="#{user.userDetail._id}">
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="firstname" class=" form-control-label">Firstname</label>
+                    <input type="text" placeholder="firstname" class="form-control" id="firstname" name="firstname" value="#{user.userDetail.firstname}">
+                </div>
+                <div class="form-group col-6">
+                    <label for="lastname" class=" form-control-label">Lastname</label>
+                    <input type="text" placeholder="lastname" class="form-control" id="lastname" name="lastname" value="#{user.userDetail.lastname}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sex" class=" form-control-label">Gender</label>
+                +select("sex", user.userDetail.sex)
+            </div>
+
+            <div class="form-group">
+                <label for="hobbies" class=" form-control-label">Hobbies</label>
+                <input type="text" placeholder="hobby, another hobby" class="form-control" id="hobbies" name="hobbies" value="#{user.userDetail.hobbies}">
+            </div>
+
+            <div class="form-group">
+                <label for="birthday" class=" form-control-label">Birthday</label>
+                <div class="input-group date">
+                    - let date = new Date(user.userDetail.birthday);
+                    - let year = date.getFullYear();
+                    - let month = date.getMonth();
+                    - let day = date.getDate();
+                    - if (month < 10) month = "0" + month;
+                    - if (day < 10) day = "0" + day;
+                    - let birthday = year + "-" + month + "-" + day;
+                    <input type="date" placeholder="DD/MM/YYYY" class="form-control" id="birthday" name="birthday" value="#{birthday}">
+                    <div class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3"><label class=" form-control-label">isPrivate</label></div>
+                <div class="col col-md-9">
+                    <div class="form-check-inline">
+                        <label for="isPrivate" class="form-check-label ">
+                            +isChecked("isPrivate", user.userDetail.isPrivate)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="updatedAt" class=" form-control-label">UpdatedAt</label>
+                <input type="text" placeholder="updatedAt" class="form-control" id="updatedAt" disabled value="#{new Date(user.updatedAt)}">
+            </div>
+            <div class="form-group">
+                <label for="createdAt" class=" form-control-label">CreatedAt</label>
+                <input type="text" placeholder="createdAt" class="form-control" id="createdAt" disabled value="#{new Date(user.createdAt)}">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-lg btn-info"><i class="fa fa-save"></i>&nbsp; Save</button>
+            </div>
+        </form>
+    </div>
+</div>

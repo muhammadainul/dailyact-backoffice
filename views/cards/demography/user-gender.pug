@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">User Demography </h4>
+    </div>
+    <div class="card-body" id="container" style="width: 100%;">
+        <form action="/user/exportUserDemography" method="post">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-download"></i> Export User Demography</button>
+                    </div>
+                </div>
+        </form>
+        <canvas id="canvas"></canvas>
+        <br>
+        <div id="tableStat" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table class="table table-striped table-bordered table-hover dataTable no-footer">
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Teens</th>
+                    <th>Adults</th>
+                    <th>Middle</th>
+                    <th>Senior</th>
+                    <th>Others</th>
+                </tr>
+                <tr id="colFemale">
+                    <td>FEMALE</td>
+                </tr>
+                <tr id="colMale">
+                    <td>MALE</td>
+                </tr>
+                <tr id="colOthers">
+                    <td>OTHERS</td>
+                </tr>
+            </table>
+            <br><br>
+            <p class="stat-heading" style="font-size: 12px" id="updatedAt"></p>
+        </div>
+    </div>
+</div><!-- /.card -->
+
+block append card-script
+    <script src="/assets/js/chart/bygender/demography.js"></script>

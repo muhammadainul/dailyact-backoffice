@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Verification List </h4>
+    </div>
+    <div class="card-body">
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="searchByUsername" class="form-control-label">Username :</label>
+                <input type="text" placeholder="username" name="searchByUsername" class="form-control" id="searchByUsername">
+            </div>
+            <div class="col-3">
+                <label for="searchByStatus" class="form-control-label">Status :</label>
+                <select name="searchByStatus" id="searchByStatus" class="form-control">
+                    <option name="all" id="all" value="All"> All</option>
+                    <option name="approved" id="approved" value="Approved"> Approved</option>
+                    <option name="rejected" id="rejected" value="Rejected"> Rejected</option>
+                    <option name="pending" id="pending" value="Pending"> Pending</option>
+                    <option name="in_review" id="in_review" value="In Review"> In Review</option>
+                </select>
+            </div>
+        </div>
+        <input type="button" class="btn btn-info" id="buttonFilterVerification" value="Filter" style="padding: 5px 35px">
+        <br><br>
+        <div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table id="userVeriftable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Alias</th>
+                        <th>Phone</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+block append card-script
+    <script src="/assets/js/datatables/verification/list.js"></script>
+

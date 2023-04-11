@@ -1,0 +1,38 @@
+<div class="modal fade" id="actionAddVersion" tabindex="-1" role="dialog" aria-labelledby="actionLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="row">
+					<div class="col-sm-12">
+						<h4 class="modal-title">Add New Version</h3>
+					</div>
+				</div>
+			</div>
+			<div class="modal-body actionBodyAddVersion" style="text-align:center;">
+				<form action="/gateway/version/add" method="post" >
+					<div class="form-group">
+						<label for="type" class=" form-control-label">OS Type</label>
+						<select name="type" id="type" class="form-control">
+							<option value="android">AndroidOS</option>
+							<option value="ios">IOS</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="version" class=" form-control-label">Version Name</label>
+						<input type="text" placeholder="ex: 0.0.1" class="form-control" id="version" name="versionName">
+					</div>
+					<div class="form-group">
+						<label for="release" class=" form-control-label">Release Date</label>
+						<input type="datetime-local" class="form-control" id="release" name="releaseDate">
+					</div>
+					<div class="text-center">
+						<button type="submit" class="btn btn-lg btn-info"><i class="fa fa-save"></i>&nbsp; Add</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+block append modal-script
+	<script src="/assets/js/modals/gateway/version_add.js"></script>

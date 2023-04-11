@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Community Profile</strong>
+    </div>
+    <div class="card-body" style="background-image: url('#{community.banner.s3[0].filename}'); background-size: cover; height: 100%; background-position: center; backdrop-filter: blur(8px);">
+        <div class="col-sm-4 mx-auto d-block">
+            
+            //- <img class="img-responsive" src="#{community.banner.s3[0].filename}" alt="image banner">
+            //- <p> #{community.banner.s3[0].filename}</p>
+            //- <p> #{community.pp.s3[0].filename}</p>
+            //- <div class="text-name">
+            //-     <h5 class="text-sm-center mt-2 mb-1">#{community.name}</h5>
+            //- </div>
+            <hr>
+        </div>
+        <div class="col-sm-4 mt-3 mx-auto">
+            <div class="profile-image">
+                <img class="layer2" src="#{community.pp.s3[0].filename}" alt="Profile Community Image">
+            </div>
+        </div>
+    </div>
+    <div class="text-name">
+        <h5 class="text-sm-center mt-2 mb-1">#{community.name}</h5>
+    </div>
+</div>

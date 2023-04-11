@@ -1,0 +1,61 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Detail Achievement</strong>
+    </div>
+    <div class="card-body">
+        <div id="bootstrap-data-table_wrapper" class="dataTables-wrapper form-inline dt-bootstrap no-footer">
+            <table width="100%" class="table table-bordered table-hover table-striped dataTable no-footer">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                    if (community.awards === null || community.awards === undefined)
+                        <tbody>
+                            <tr>
+                                <td class="text-center" width="100%">No Content</td>
+                                <td class="text-center" width="100%">No Image</td>
+                            </tr>
+                        </tbody>
+                    else
+                        each o in community.awards.communityawards
+                            <tbody>
+                                <tr>
+                                    <td width="100%">#{o.title}</td>
+                                    <td width="100%">
+                                        each i in o.images 
+                                            <img src="#{i.s3[0].filename}" width="400px" height="auto"> 
+                                            <br>
+                                            <br>
+                                        //- <button class="openAchievementModal btn btn-primary" data-id="#{o.images.s3}" type="button" data-toggle='modal'><i class='fa fa-plus'></i> View</td>
+                                </tr>
+                            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+script.
+    var slide_index = 1;  
+    displaySlides(slide_index);  
+
+    function nextSlide(n) {  
+        displaySlides(slide_index += n);  
+    }  
+
+    function currentSlide(n) {  
+        displaySlides(slide_index = n);  
+    }  
+
+    function displaySlides(n) {  
+        var i;  
+        var slides = document.getElementsByClassName("show-slide");  
+        if (n > slides.length) { slide_index = 1 }  
+        if (n < 0) { slide_index = slides.length }  
+        for (i = 0; i < slides.length; i++) {  
+            slides[i].style.display = "none";  
+        }  
+        slides[slide_index - 1].style.display = "block";  
+    }  
+//- include /modals/community/achievement

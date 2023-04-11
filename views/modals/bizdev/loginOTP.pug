@@ -1,0 +1,30 @@
+<div class="modal fade" id="actionLoginOTPAccount" tabindex="-1" role="dialog" aria-labelledby="actionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <center><h4 class="modal-title">Login Account Step-2</h3></center>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body actionBodyLoginOTPAccount" style="text-align:center;">
+                <form action="/bizdev/account" method="post" >
+                    <div class="form-group" id="formEmail">
+                        //- inside login.js
+                    </div>
+                    <div class="form-group">
+                        <label for="login_otp" class=" form-control-label">OTP</label>
+                        <input type="text" placeholder="123456" class="form-control" id="login_otp" name="login_otp" maxlength="6" required>
+                    </div>
+                    <div class="form-group" id="formToken2">
+                        //- inside login.js
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-lg btn-info"> Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

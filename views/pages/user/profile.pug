@@ -1,0 +1,26 @@
+extends index
+
+block content
+    <div class="content">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    include /cards/user/profile
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    if (masteredit)
+                        include /cards/user/form/master
+                    else
+                        include /cards/user/master
+                </div>
+                <div class="col-lg-6">
+                    if (detailedit)
+                        include /cards/user/form/detail
+                    else
+                        include /cards/user/detail
+                </div>
+            </div>
+        </div>
+    </div>

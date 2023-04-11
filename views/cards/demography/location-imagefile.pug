@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">User Demography by Location - Post Image File</h4>
+    </div>
+    <div class="card-body">
+        <div id="chartdivimagefile"></div>
+        <br>
+        <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table id="tableStatLocImageFile" class="table table-striped table-bordered table-hover dataTable no-footer">
+                <tr>
+                    <th>#</th>
+                    <th>Province</th>
+                    <th>Value</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div><!-- /.card -->
+
+include /modals/post/demography-postimagefile
+
+block append card-script
+    <script src="/assets/js/chart/bylocation/locationImageFile.js"></script>

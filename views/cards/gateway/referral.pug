@@ -1,0 +1,66 @@
+<div class="card">
+	<div class="card-body">
+		<h4 class="box-title">Referral List </h4>
+	</div>
+	<div class="card-body">
+		<form>
+			<div class="row form-group">
+				<div class="col-3">
+					<label for="searchByReferrer" class="form-control-label">Referrer:</label>
+					<input type="text" placeholder="referrer" class="form-control" id="searchByReferrer" name="searchByReferrer">
+				</div>
+				<div class="col-3">
+					<label for="searchByUTM_Source" class="form-control-label">UTM Source:</label>
+					<input type="text" placeholder="utm_source" class="form-control" id="searchByUTM_Source" name="searchByUTM_Source">
+				</div>
+				<div class="col-3">
+					<label for="searchByUTM_Medium" class="form-control-label">UTM Medium:</label>
+					<input type="text" placeholder="utm_medium" class="form-control" id="searchByUTM_Medium" name="searchByUTM_Medium">
+				</div>
+				<div class="col-3">
+					<label for="searchByUTM_Term" class="form-control-label">UTM Term:</label>
+					<input type="text" placeholder="utm_term" class="form-control" id="searchByUTM_Term" name="searchByUTM_Term">
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-3">
+					<label for="searchByUTM_Content" class="form-control-label">UTM Content:</label>
+					<input type="text" placeholder="utm_content" class="form-control" id="searchByUTM_Content" name="searchByUTM_Content">
+				</div>
+				<div class="col-3">
+					<label for="searchByUTM_Campaign" class="form-control-label">UTM Campaign:</label>
+					<input type="text" placeholder="utm_campaign" class="form-control" id="searchByUTM_Campaign" name="searchByUTM_Campaign">
+				</div>
+				<div class="col-3">
+					<label for="startDate" class="form-control-label">Date Start</label>
+					<input type="datetime-local" class="form-control" id="startDate" name="startDate">
+				</div>
+				<div class="col-3">
+					<label for="startDate" class="form-control-label">Date End</label>
+					<input type="datetime-local" class="form-control" id="endDate" name="endDate">
+				</div>
+			</div>
+			<input type="button" class="btn btn-info" id="buttonFilterReferral" value="Filter" style="padding: 5px 35px">
+		</form>
+		<br><br>
+		<div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+			<table id="referraltable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+				<thead>
+					<tr>
+						<th>Referrer</th>
+						<th>UTM Source</th>
+						<th>UTM Medium</th>
+						<th>UTM Term</th>
+						<th>UTM Content</th>
+						<th>UTM Campaign</th>
+						<th>Created Date</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</div>
+
+block append card-script
+	<script src="/assets/js/datatables/gateway/referral.js"></script>
+

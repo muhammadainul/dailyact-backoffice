@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">User Demography by Location - Story Data</h4>
+    </div>
+    <div class="card-body">
+        <div id="chartdivstory"></div>
+        <br>
+        <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table id="tableStatLocStory" class="table table-striped table-bordered table-hover dataTable no-footer">
+                <tr>
+                    <th>#</th>
+                    <th>Province</th>
+                    <th>Value</th>
+                </tr>
+            </table>
+        </div>
+        <br>
+    </div>
+</div><!-- /.card -->
+
+include /modals/story/demography-storydata
+
+block append card-script
+    <script src="/assets/js/chart/bylocation/locationStoryData.js"></script>

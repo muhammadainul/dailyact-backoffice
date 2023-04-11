@@ -1,0 +1,50 @@
+<div class="card">
+	<div class="card-body">
+		<h4 class="box-title">Post List </h4>
+	</div>
+	<div class="card-body">
+		<form id="formPost" action="/post/export" method="post">
+			<div class="row form-group">
+				<div class="col-3">
+					<label for="searchByHashTag" class="form-control-label">HashTag:</label>
+					<input type="text" placeholder="#hashtag" class="form-control" id="searchByHashTag" name="searchByHashTag">
+				</div>
+				<div class="col-3">
+					<label for="searchByUsername" class="form-control-label">Username:</label>
+					<input type="text" placeholder="user_name" class="form-control" id="searchByUsername" name="searchByUsername">
+				</div>
+				<div class="col-3">
+					<label for="startDate" class="form-control-label">Date Start</label>
+					<input type="datetime-local" class="form-control" id="startDate" name="startDate">
+				</div>
+				<div class="col-3">
+					<label for="startDate" class="form-control-label">Date End</label>
+					<input type="datetime-local" class="form-control" id="endDate" name="endDate">
+				</div>
+			</div>
+			<input type="button" class="btn btn-info" id="buttonFilterPost" value="Filter" style="padding: 5px 35px">
+			<button id="submitFormExport" type="submit" class="btn btn-success" style="padding: 5px 35px; margin: 0px 10px;">Export Posts</button>
+		</form>
+		<br><br>
+		<input id="btnToggle" type="checkbox" data-toggle="toggle" data-onstyle="primary" data-ofstyle="default" data-style="ios">
+		<br><br>
+		<div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+			<table id="posttable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+				<thead>
+					<tr role="row">
+						<th>Content</th>
+						<th>Caption</th>
+						<th>Username</th>
+						<th>Likes Count</th>
+						<th>Created Date</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</div>
+
+include /modals/post/view_content
+
+block append card-script
+	<script src="/assets/js/datatables/post/list.js"></script>

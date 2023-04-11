@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Community Summary</h4>
+    </div>
+    <div class="card-body">
+        <div class="row form-group">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <label for="startDate" class="form-control-label">Date Start</label>
+                <input type="datetime-local" class="form-control" id="startDate" name="startDate">
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <label for="startDate" class="form-control-label">Date End</label>
+                <input type="datetime-local" class="form-control" id="endDate" name="endDate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <input type="button" class="btn btn-info" id="buttonFilterCommunity" value="Filter">
+            </div>
+        </div>
+        <br/>
+        <div id="bootstrap-data-table_wrapper" class="dataTables-wrapper form-inline dt-bootstrap no-footer">
+            <table id="communitySummaryTable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                <thead>
+                    <tr role="row">
+                        <th>Community ID</th>
+                        <th>Profile Image</th>
+                        <th>Community Name</th>
+                        <th>Member(Count)</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                //- <tbody>
+                //-     <tr>
+                //-         <td>bla</td>
+                //-         <td>blablabla</td>
+                //-         <td>blablablabla</td>
+                //-         <td>blablabla</td>
+                //-         <td><button class="btn btn-primary"><a href="/community/detail" style="color: white;">View</a></button></td>
+                //-     </tr>
+                //- </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+block append card-script
+    <script src="/assets/js/datatables/community/community_summary.js"></script>

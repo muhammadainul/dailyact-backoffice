@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Master</strong>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">User ID: #{user._id}</li>
+            <li class="list-group-item">Username: #{user.username}</li>
+            <li class="list-group-item">
+                | Local E-mail: #{user.local.email} &nbsp;
+                if (user.verification.email) 
+                    <i class='btn btn-outline-success fa fa-check'></i>
+                else
+                    <i class='btn btn-outline-danger fa fa-close'></i>
+            </li>
+            //- <li class="list-group-item">Facebook: #{user.facebook}</li>
+            //- <li class="list-group-item">Google: #{user.google}</li>
+            <li class="list-group-item">
+                | Mobile: (+#{user.country_code}) #{user.mobile} &nbsp;
+                if (user.verification.mobile) 
+                    <i class='btn btn-outline-success fa fa-check'></i>
+                else
+                    <i class='btn btn-outline-danger fa fa-close'></i>
+            </li>
+            <li class="list-group-item">VerifyOTP: #{user.verifyOTP}</li>
+            <li class="list-group-item">Enabled: #{user.enabled}</li>
+            <li class="list-group-item">AccountNonExpired: #{user.accountNonExpired}</li>
+            <li class="list-group-item">AccountNonLocked: #{user.accountNonLocked}</li>
+            <li class="list-group-item">Admin: #{user.admin}</li>
+            <li class="list-group-item">UpdatedAt: #{new Date(user.updatedAt)}</li>
+            <li class="list-group-item">CreatedAt: #{new Date(user.createdAt)}</li>
+        </ul>
+        <div class="text-right">
+            <a href="/user/profile/#{user._id}/edit/master" class="btn btn-info" style="margin: 10px">Edit</a>
+        </div>
+    </div>
+</div>

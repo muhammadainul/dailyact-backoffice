@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Forum</strong>
+    </div>
+    <div class="card-body">
+        <div id="bootstrap-data-table_wrapper" class="dataTables-wrapper form-inline dt-bootstrap no-footer">
+            <table class="table table-bordered table-hover table-striped dataTable no-footer">
+                <thead>
+                    <tr>
+                        <th>Forum Post</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        if (community.topic[0] === undefined || community.topic[0] === null)
+                            <td>No Content</td>
+                        else 
+                            <td>#{community.topic[0].title}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+//- include /modals/community/achievement

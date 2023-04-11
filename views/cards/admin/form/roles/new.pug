@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header"><strong>Roles</strong><small> New</small></div>
+    <div class="card-body card-block text-left">
+        <form method="POST" action="/admin/roles/add">
+            //- <div class="form-group">
+            //-     <label for="roleid" class=" form-control-label">roleid</label>
+            //-     <input type="text" placeholder="roleid" class="form-control" id="roleid" name="roleid" value="#{role._id}">
+            //- </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="role" class=" form-control-label">role</label>
+                        <input type="text" placeholder="role" class="form-control" id="role" name="role">
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class=" form-control-label">description</label>
+                        <input type="text" placeholder="description" class="form-control" id="description" name="description">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="privileges" class=" form-control-label">privileges</label>
+                        <input type="text" placeholder="TODO checkboxes" class="form-control" id="privileges" name="privileges" disabled>
+                    </div>
+                    <button id="save-button" type="submit" class="btn btn-lg btn-info btn-block">
+                        <i class="fa fa-save fa-lg"></i>&nbsp;
+                        <span id="Save">Save</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

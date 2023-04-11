@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Business Development Account </h4>
+    </div>
+    <div class="card-body">
+        - if(OTPAlert)
+            <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="text-align:left;">
+                <span class="badge badge-pill badge-danger">Failed</span> Invalid OTP code, please try to login again.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        <div id="accountButton">
+            //- inside account.js
+        </div>
+        <div id="tes"></div>
+        <div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table id="bizdevtable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                <thead>
+                    <tr>
+                        <th class="avatar">Avatar</th>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+include /modals/bizdev/register
+include /modals/bizdev/login
+include /modals/bizdev/loginOTP
+include /modals/bizdev/logout
+include /modals/bizdev/post
+
+script. 
+    var user = !{JSON.stringify(userData)};
+
+block append card-script
+    <script src="/assets/js/datatables/bizdev/account.js"></script>
+    //- <script src="/assets/js/cards/bizdev/account.js"></script>

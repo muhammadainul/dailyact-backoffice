@@ -1,0 +1,99 @@
+mixin isChecked(id, value)
+    if value == true
+        <input type="checkbox" id="#{id}" name="#{id}" value="true" class="form-check-input" checked>
+    else
+        <input type="checkbox" id="#{id}" name="#{id}" value="true" class="form-check-input">
+
+<div class="card">
+    <div class="card-header"><strong>User</strong><small> Edit</small></div>
+    <div class="card-body card-block text-left">
+        <form method="POST" action="/admin/user/update">
+            <input type="hidden" value="#{user._id}" name="userid">
+            <div class="form-group">
+                <label for="userid" class=" form-control-label">userid</label>
+                <input type="text" placeholder="userId" class="form-control" disabled id="userid" value="#{user._id}">
+            </div>
+            <div class="form-group">
+                <label for="username" class=" form-control-label">username</label>
+                <input type="text" placeholder="Username" class="form-control" id="username" name="username" value="#{user.username}">
+            </div>
+            <div class="form-group">
+                <label for="email" class=" form-control-label">email</label>
+                <input type="text" placeholder="email" class="form-control" id="email" name="email" value="#{user.local.email}">
+            </div>
+            <div class="form-group">
+                <label for="mobile" class=" form-control-label">mobile</label>
+                <div class="row">
+                    <div class="col col-md-2">
+                        <input type="text" placeholder="+62" class="form-control" id="country_code" name="country_code" value="#{user.country_code}">
+                    </div>
+                    <div class="col col-md-10">
+                        <input type="text" placeholder="81987654321" class="form-control" id="mobile" name="mobile" value="#{user.mobile}">
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-4"><label class=" form-control-label">verifyOTP</label></div>
+                <div class="col col-md-8">
+                    <div class="form-check-inline">
+                        <label for="verifyotp" class="form-check-label ">
+                            +isChecked("verifyotp", user.verifyOTP)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-4"><label class=" form-control-label">enabled</label></div>
+                <div class="col col-md-8">
+                    <div class="form-check-inline">
+                        <label for="enabled" class="form-check-label ">
+                            +isChecked("enabled", user.enabled)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-4"><label class=" form-control-label">accountNonExpired</label></div>
+                <div class="col col-md-8">
+                    <div class="form-check-inline">
+                        <label for="accountNonExpired" class="form-check-label ">
+                            +isChecked("accountNonExpired", user.accountNonExpired)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-4"><label class=" form-control-label">accountNonLocked</label></div>
+                <div class="col col-md-8">
+                    <div class="form-check-inline">
+                        <label for="accountNonLocked" class="form-check-label ">
+                            +isChecked("accountNonLocked", user.accountNonLocked)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-4"><label class=" form-control-label">admin</label></div>
+                <div class="col col-md-8">
+                    <div class="form-check-inline">
+                        <label for="admin" class="form-check-label ">
+                            +isChecked("admin", user.admin)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="updatedAt" class=" form-control-label">updatedAt</label>
+                <input type="text" placeholder="updatedAt" class="form-control" id="updatedAt" disabled value="#{user.updatedAt}">
+            </div>
+            <div class="form-group">
+                <label for="createdAt" class=" form-control-label">createdAt</label>
+                <input type="text" placeholder="createdAt" class="form-control" id="createdAt" disabled value="#{user.createdAt}">
+            </div>
+            <button id="save-button" type="submit" class="btn btn-lg btn-info btn-block">
+                <i class="fa fa-save fa-lg"></i>&nbsp;
+                <span id="Save">Save</span>
+            </button>
+        </form>
+    </div>
+</div>

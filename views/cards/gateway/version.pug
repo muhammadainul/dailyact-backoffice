@@ -1,0 +1,29 @@
+<div class="card">
+	<div class="card-body">
+		<h4 class="box-title">Version List </h4>
+	</div>
+	<div class="card-body">
+	<button class='openAddVersionDialog btn btn-outline-primary' type='button' data-toggle='modal'><i class='fa fa-plus'></i> Add Version</button><br><br>
+		<div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+			<table id="versiontable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>OS Type</th>
+						<th>Version Name</th>
+						<th>Release Date</th>
+						<th>Created Date</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</div>
+
+include /modals/gateway/version
+include /modals/gateway/version_add
+
+block append card-script
+	<script src="/assets/js/datatables/gateway/version.js"></script>
+

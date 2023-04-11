@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Details</strong>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">Detail ID: #{user.userDetail._id}</li>
+            <li class="list-group-item">Username: #{user.userDetail.username}</li>
+            <li class="list-group-item">Firstname: #{user.userDetail.firstname}</li>
+            <li class="list-group-item">Lastname: #{user.userDetail.lastname}</li>
+            <li class="list-group-item">Gender: #{user.userDetail.sex}</li>
+            <li class="list-group-item">Hobbies: #{user.userDetail.hobbies}</li>
+            <li class="list-group-item">Birthday: #{new Date(user.userDetail.birthday)}</li>
+            <li class="list-group-item">isPrivate: #{user.userDetail.isPrivate}</li>
+            <li class="list-group-item">UpdatedAt: #{new Date(user.userDetail.updatedAt)}</li>
+            <li class="list-group-item">CreatedAt: #{new Date(user.userDetail.createdAt)}</li>
+        </ul>
+        <div class="text-right">
+            <a href="/user/profile/#{user._id}/edit/detail" class="btn btn-info" style="margin: 10px">Edit</a>
+        </div>
+    </div>
+</div>

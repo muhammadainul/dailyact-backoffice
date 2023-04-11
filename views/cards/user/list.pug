@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">User List </h4>
+    </div>
+    <div class="card-body">
+        <form action="/user/export" method="post">
+            <div class="row">
+                <div class="col-sm-3">
+                    //- <label for="promocode" class="form-control-label">PromoCode</label>
+                    <input type="text" placeholder="PromoCode" class="form-control" id="promocode" name="promocode">
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-success">Export Users</button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table id="usertable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                <thead>
+                    <tr>
+                        <th class="avatar">Avatar</th>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Birthday</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+block append card-script
+    <script src="/assets/js/datatables/user/list.js"></script>
+

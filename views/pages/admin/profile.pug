@@ -1,0 +1,41 @@
+extends index
+
+block content
+    <div class="content">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    include /cards/admin/profile
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    if (useredit)
+                        include /cards/admin/form/user
+                    else
+                        include /cards/admin/user
+                </div>
+                <div class="col-lg-6">
+                    if (detailedit)
+                        include /cards/admin/form/detail
+                    else
+                        include /cards/admin/detail
+                </div>
+            </div>
+            if(raw)
+                <div class="row">
+                    <div class="col-lg-12">
+                        include /cards/admin/raw
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    //- include /modals/admin/register
+
+block append card-style
+    //- <link rel="stylesheet" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+
+block append card-script
+    //- <script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script>
+    //- <script src="/assets/js/cards/admin/form/detail.js"></script>

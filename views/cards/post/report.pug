@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Reported Post List </h4>
+    </div>
+    <div class="card-body">
+        <div id="bootstrap-data-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <table id="posttable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                <thead>
+                    <tr>
+                        <th>Post ID</th>
+                        <th>Caption</th>
+                        <th>Report Reason</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+block append card-script
+    <script src="/assets/js/datatables/post/report.js"></script>
+

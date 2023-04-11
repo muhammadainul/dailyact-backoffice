@@ -1,0 +1,81 @@
+mixin isChecked(id, value)
+    if value == true
+        <input type="checkbox" id="#{id}" name="#{id}" value="true" class="form-check-input" checked>
+    else
+        <input type="checkbox" id="#{id}" name="#{id}" value="true" class="form-check-input">
+
+mixin select(id, selected)
+    <select name="#{id}" id="#{id}" class="form-control">
+        <option value="0">Please select one</option>
+        each val in lists.gender
+            if val == selected
+                <option value=#{val} selected>#{val}</option>
+            else
+                <option value=#{val}>#{val}</option>
+    </select>
+
+<div class="card">
+    <div class="card-header"><strong>UserDetail</strong><small> Edit</small></div>
+    <div class="card-body card-block text-left">
+        <form method="POST" action="/admin/userdetail/update">
+            <input type="hidden" value="#{user.userDetail._id}" name="userdetailid">
+            <input type="hidden" value="#{user._id}" name="userid">
+            //- <div class="form-group">
+            //-     <label for="userid" class=" form-control-label">detailid</label>
+            //-     <input type="text" placeholder="userId" class="form-control" disabled id="userid" value="#{user.userDetail._id}">
+            //- </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="firstname" class=" form-control-label">firstname</label>
+                    <input type="text" placeholder="firstname" class="form-control" id="firstname" name="firstname" value="#{user.userDetail.firstname}">
+                </div>
+                <div class="form-group col-6">
+                    <label for="lastname" class=" form-control-label">lastname</label>
+                    <input type="text" placeholder="lastname" class="form-control" id="lastname" name="lastname" value="#{user.userDetail.lastname}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sex" class=" form-control-label">gender</label>
+                +select("sex", user.userDetail.sex)
+            </div>
+
+            <div class="form-group">
+                <label for="hobbies" class=" form-control-label">hobbies</label>
+                <input type="text" placeholder="hobby, another hobby" class="form-control" id="hobbies" name="hobbies" value="#{user.userDetail.hobbies}">
+            </div>
+
+            <div class="form-group">
+                <label for="birthday" class=" form-control-label">birthday</label>
+                <div class="input-group date">
+                    <input type="text" placeholder="YYYY/MM/DD" class="form-control" id="birthday" name="birthday" value="#{user.userDetail.birthday}">
+                    <div class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-4"><label class=" form-control-label">isPrivate</label></div>
+                <div class="col col-md-8">
+                    <div class="form-check-inline">
+                        <label for="isprivate" class="form-check-label ">
+                            +isChecked("isprivate", user.userDetail.isPrivate)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            //- <div class="form-group">
+            //-     <label for="updatedAt" class=" form-control-label">updatedAt</label>
+            //-     <input type="text" placeholder="updatedAt" class="form-control" id="updatedAt" disabled value="#{user.userDetail.updatedAt}">
+            //- </div>
+            //- <div class="form-group">
+            //-     <label for="createdAt" class=" form-control-label">createdAt</label>
+            //-     <input type="text" placeholder="createdAt" class="form-control" id="createdAt" disabled value="#{user.userDetail.createdAt}">
+            //- </div>
+            <button id="save-button" type="submit" class="btn btn-lg btn-info btn-block">
+                <i class="fa fa-save fa-lg"></i>&nbsp;
+                <span id="Save">Save</span>
+            </button>
+        </form>
+    </div>
+</div>

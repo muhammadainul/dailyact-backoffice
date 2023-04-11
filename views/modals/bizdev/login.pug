@@ -1,0 +1,28 @@
+<div class="modal fade" id="actionLoginAccount" tabindex="-1" role="dialog" aria-labelledby="actionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <center><h4 class="modal-title">Login Account</h3></center>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body actionBodyLoginAccount" style="text-align:center;">
+                <div class="form-group">
+                    <label for="email" class=" form-control-label">Email</label>
+                    <input type="email" placeholder="contoh@example.com" class="form-control" id="emailLogin" name="email" required>
+                </div>
+                <div class="form-group" id="formToken1">
+                    //- inside login.js
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-lg btn-info buttonLogin"> Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+block append modal-script
+    <script src="/assets/js/modals/bizdev/login.js"></script>

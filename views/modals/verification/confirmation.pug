@@ -1,0 +1,24 @@
+<div class="modal fade none-border" id="viewApproveConfirmation">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title"><strong>Approve Confirmation</strong></h5>
+            </div>
+            <div class="modal-body">
+                <span>Are you sure ?</span>
+            </div>
+            <div class="modal-footer">
+                <form id="approveConfirm" method="post" action="/verification/review/update">
+                    <input type="hidden" id="verificationId" name="verificationId" value="#{verification._id}">
+                    <button type="submit" id="approved" class="openActionConfirmation btn btn-primary btn-sm" name="approved" data-toggle='modal'><i class="fa fa-check" aria-hidden="true"></i> Approve</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+include approved-modal
+
+block append modal-script
+    <script src="/assets/js/modals/verification/confirmation.js"></script>

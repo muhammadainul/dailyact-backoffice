@@ -1,0 +1,15 @@
+<div class="card weather-box">
+    <h4 class="weather-title box-title">Weather</h4>
+    <div class="card-body">
+        <div class="weather-widget">
+            <div id="weather-one" class="weather-one"></div>
+        </div>
+    </div>
+</div><!-- /.card -->
+
+block append card-style
+    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
+
+block append card-script
+    <script src="/assets/js/lib/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
+    <script src="/assets/js/init/weather-init.js"></script>

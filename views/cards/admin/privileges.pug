@@ -1,0 +1,46 @@
+mixin row(item, i)
+    <tr>
+        <td class="serial">#{i+1}</td>
+        <td>#{item._id}</td>
+        <td>#{item.privilege}</td>
+        <td>#{item.description}</td>
+        <td>#{item.service}</td>
+        <td>
+        if (item.actions)
+            <ul>
+                each o, i in item.actions
+                    <li>#{item}</li>
+            </ul>
+        </td>
+        <td>
+            <a class="btn btn-link" href="/admin/privilege/#{item._id}/edit">Edit</button>
+        </td>
+    </tr>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Privileges List </h4>
+    </div>
+    <div class="card-body--">
+        <div class="table-stats order-table ov-h">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th class="serial">#</th>
+                        <th>id</th>
+                        <th>Privilege</th>
+                        <th>Description</th>
+                        <th>Servces</th>
+                        <th>Actions</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    if (privilegeList)
+                        each item, i in privilegeList
+                            +row(item, i)
+                </tbody>
+            </table>
+        </div> <!-- /.table-stats -->
+    </div>
+</div>

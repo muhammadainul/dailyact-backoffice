@@ -1,0 +1,50 @@
+<div class="modal fade" id="actionEditFavorite" tabindex="-1" role="dialog" aria-labelledby="actionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="modal-title">Edit Favorite</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body actionBodyEditFavorite" style="text-align:center;">
+                <form id="tenfavsEditForm" action="/tenfavs/edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="tenfavsId" name="tenfavsId">
+                    <div class="form-group">
+                        <div class="form-group" id="tenfavsFile">
+                            <label class=" form-control-label"> Image</label>
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="file" name="files" accept="image/*" required>
+                                </div>
+                                <div class="col-2">
+                                    <button type="button" id="fileFavRemove" class="btn btn-sm btn-danger"><i class="fa fa-minus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class=" form-control-label">Favorite Title</label>
+                            <input id="editFavoriteTitle" type="text" placeholder="ex: FAVORITE" class="form-control" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interests" class=" form-control-label">Category (Separated by Comma)</label>
+                            <input id="editFavoriteCategory" type="text" placeholder="ex: Car,Automotive,Engineer" class="form-control" name="interests">
+                        </div>
+                        <div class="form-group">
+                            <label for="isVerified" class=" form-control-label">Is Verified</label><br>
+                            <input type="radio" id="isVerifiedTrue" name="isVerified" value="true" class="form-check-input">True  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="isVerifiedFalse" name="isVerified" value="false" class="form-check-input" checked>False
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-lg btn-info" id="saveEditFavButton"><i class="fa fa-save"></i>&nbsp; Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+block append modal-script
+    <script src="/assets/js/modals/tenfavs/edit.js"></script>

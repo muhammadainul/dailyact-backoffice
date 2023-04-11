@@ -1,0 +1,47 @@
+mixin useritem(user, i)
+    <tr>
+        <td class="serial">#{i+1}</td>
+        <td class="avatar">
+            <div class="round-img">
+                <a href="#"><img class="rounded-circle" src="/images/avatar/1.jpg" alt=""></a>
+            </div>
+        </td>
+        <td>#{user._id}</td>
+        <td><span class="name">#{user.userDetail.firstname + ' ' + user.userDetail.lastname}</span></td>
+        <td><span class="email">#{user.local.email}</span></td>
+        //- <td>
+        //-     <span class="badge badge-complete" data-toggle="modal" data-target="#user-detail-modal" data-userid="#{user._id}">view</span>
+        //- </td>
+        <td><button type="button" class="btn btn-link"><a href="/admin/profile/#{user._id}">View</a></button></td>
+        <td><span class="username">#{user.username}</span></td>
+        <td><span class="mobile">+#{user.country_code} #{user.mobile}</span></td>
+    </tr>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Admin List </h4>
+    </div>
+    <div class="card-body--">
+        <div class="table-stats order-table ov-h">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th class="serial">#</th>
+                        <th class="avatar">Avatar</th>
+                        <th>userId</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Detail</th>
+                        <th>Username</th>
+                        <th>Mobile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    if adminList
+                        each item, i in adminList
+                            +useritem(item, i)
+                </tbody>
+            </table>
+        </div> <!-- /.table-stats -->
+    </div>
+</div>

@@ -1,0 +1,36 @@
+extends index
+
+block content
+    <div class="content">
+        <div class="animated fadeIn">
+            if (!privilegeedit)
+                <div class="row">
+                    <div class="col-lg-12">
+                        include /cards/admin/roles
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        if (roleedit)
+                            include /cards/admin/form/roles/edit
+                        else
+                            include /cards/admin/form/roles/new
+                    </div>
+                </div>
+            if (!roleedit)
+                <div class="row">
+                    <div class="col-lg-12">
+                        include /cards/admin/privileges
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        if (privilegeedit)
+                            include /cards/admin/form/privileges/edit
+                        else
+                            include /cards/admin/form/privileges/new
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

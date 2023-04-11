@@ -1,0 +1,50 @@
+mixin privilegeRow(item)
+    <li>#{item.privilege}</li>
+    <li>#{item.description}</li>
+    <li>#{item.service}</li>
+    <li>#{item.actions}</li>
+
+mixin roleRow(role, i)
+    <tr>
+        <td class="serial">#{i+1}</td>
+        <td>#{role._id}</td>
+        <td>#{role.role}</td>
+        <td>#{role.description}</td>
+        <td>
+        if (role.privileges)
+            <ul>
+                each item, i in role.privileges
+                    +privilegeRow(item)
+            </ul>
+        </td>
+        <td>
+            <a class="btn btn-link" href="/admin/roles/#{role._id}/edit">Edit</button>
+        </td>
+    </tr>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="box-title">Role List </h4>
+    </div>
+    <div class="card-body--">
+        <div class="table-stats order-table ov-h">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th class="serial">#</th>
+                        <th>roleId</th>
+                        <th>Role</th>
+                        <th>Description</th>
+                        <th>Privileges</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    if (roleList)
+                        each item, i in roleList
+                            +roleRow(item, i)
+                </tbody>
+            </table>
+        </div> <!-- /.table-stats -->
+    </div>
+</div>
